@@ -1,0 +1,26 @@
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+}
+
+#tabela{
+    border: 2px solid black;
+    display: none;
+    flex-direction: row;
+    align-items: center;
+}
+
+.pos{
+    width: 100px;
+    height: 15px;
+    background-color: white;
+    margin: 10px;
+    text-align: center;
+}
+
+.coluna{
+    display: flex;
+    flex-direction: column;
+    width: 120px;
+    background-color: steelblue;
+}
