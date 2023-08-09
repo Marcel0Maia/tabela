@@ -3,7 +3,7 @@ function tabela(){
     document.getElementById("setDuplas").style.display =  'none';
 
     var numDuplas = document.getElementById("setDuplas").value;
-    var numColunas = Math.floor(numDuplas/8) + 2;
+    var numColunas = Math.floor(Math.log2(numDuplas));
     var tabela = document.getElementById("tabela");
     tabela.style.display = 'flex';
 
@@ -11,10 +11,10 @@ function tabela(){
     var contCol = 1;//conta o numero de colunas
     var aux = 1;//serve para escrever o numero da dupla
     var aux2 = 0;
-    var jogoExtra = numDuplas - (Math.floor(numDuplas/8) * 8)
+    var jogoExtra = numDuplas - (2**numColunas)
 
     //verifica se ira criar uma coluna adicional 
-    if(numDuplas % 8 != 0 && jogoExtra*2 < 2**numColunas){
+    if(!Number.isInteger(Math.log2(numDuplas)) && jogoExtra*2 < 2**numColunas && numDuplas > 2**numColunas){
         var coluna = document.createElement('div');
         tabela.appendChild(coluna);
 
